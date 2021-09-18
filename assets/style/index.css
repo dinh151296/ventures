@@ -160,6 +160,123 @@ p.portfolio-more {
     color: #474747;
 }
 
+
+/* =======modal======= */
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 20;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__content {
+    perspective: 2000px;
+    max-width: 400px;
+    background-color: #fff;
+    border: 1px solid rgb(243, 243, 243);
+    box-shadow: rgb(149 164 189 / 30%) 0px 10px 40px;
+    border-radius: 6px;
+    padding: 14px 19px;
+    color: black;
+    position: relative;
+    margin: 0 auto;
+    top: 20%;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY( -60deg);
+}
+
+.modal.show .modal__content {
+    opacity: 1;
+    transform: rotateY( 0deg);
+}
+
+.modal__content .title {
+    justify-content: space-between;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgb(214, 218, 252);
+}
+
+.modal__content .title>h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.modal__content .title>img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.modal__user {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__user+.modal__user {
+    margin-top: 20px;
+}
+
+.user-avata {
+    width: 70px;
+}
+
+.user-info {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.user-info>h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.user-footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-footer>h4 {
+    font-size: 14px;
+    color: #000;
+    font-weight: 300;
+}
+
+.user-link {
+    display: flex;
+    align-items: center;
+}
+
+.user-link img {
+    width: 19px;
+    margin-right: 12px;
+}
+
+.user-link span {
+    font-size: 12px;
+    color: #474747;
+    text-decoration: underline;
+    font-weight: 100;
+}
+
+
+/* =======modal======= */
+
 @media only screen and (max-width: 991px) {
     .hero__inner {
         flex-wrap: wrap;
@@ -242,5 +359,15 @@ p.portfolio-more {
     }
     .portfolio {
         margin-bottom: 45px;
+    }
+    .modal__content {
+        max-width: 320px;
+        padding: 14px 10px;
+    }
+    .user-info {
+        padding-left: 10px;
+    }
+    .user-avata {
+        width: 60px;
     }
 }
